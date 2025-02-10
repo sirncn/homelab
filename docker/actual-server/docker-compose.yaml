@@ -1,0 +1,9 @@
+services:
+  actual_server:
+    container_name: actual
+    image: docker.io/actualbudget/actual-server:24.12.0-alpine
+    ports:
+      - $ACTUAL_SERVER_PORT:5006
+    volumes:
+      - $ACTUAL_SERVER_VOL_DATA:/data
+    restart: unless-stopped
