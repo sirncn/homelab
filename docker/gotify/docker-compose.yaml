@@ -1,0 +1,12 @@
+services:
+  gotify:
+    image: gotify/server:2.5.0
+    container_name: gotify
+    restart: unless-stopped
+    ports:
+      - $GOTIFY_PORT:80
+    environment:
+      - TZ=$GOTIFY_TZ
+      - GOTIFY_DEFAULTUSER_PASS=$GOTIFY_DEFAULTUSER_PASS
+    volumes:
+      - $GOTIFY_VOL_DATA:/app/data
