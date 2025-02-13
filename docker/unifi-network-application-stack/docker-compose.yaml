@@ -1,0 +1,29 @@
+services:
+  unifi-db:
+    image: docker.io/mongo:3.6
+    container_name: unifi-db
+    volumes:
+      - $UNIFI_NETWORK_DB_VOL_DATA:/data/db
+      - $UNIFI_NETWORK_DB_VOL_INIT:/docker-entrypoint-initdb.d/init-mongo.js:ro
+    restart: unless-stopped
+    
+  unifi-network-application:
+    image: lscr.io/linuxserver/unifi-network-application:latest
+    container_name: unifi-network-application
+    environment:
+      - PUID=$UNIFI_NETWORK_PUID
+      - PGID=$UNIFI_NETWORK_PGID
+      - TZ=$UNIFI_NETWORK_TZ
+      - MONGO_USER=$UNIFI_NETWORK_DB_USER
+      - MONGO_PASS=$UNIFI_NETWORK_DB_PASSWORD
+      - MONGO_HOST=unifi-db
+      - MONGO_PORT=27017
+      - MONGO_DBNAME=unifi
+    volumes:
+      - $UNIFI_NETWORK_VOL_CONFIG:/config
+    ports:
+      - $UNIFI_NETWORK_PORT:8443
+      - $UNIFI_NETWORK_UDP_PORT_ONE:3478/udp
+      - $UNIFI_NETWORK_UDP_PORT_TWO:10001/udp
+      - 1901:1900/udp #optional
+    restart: unless-stopped
