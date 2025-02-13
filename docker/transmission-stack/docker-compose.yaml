@@ -1,0 +1,35 @@
+services:
+  gluetun:
+    image: qmcgaw/gluetun:v3.38.0
+    container_name: gluetun
+    ports:
+      - $TRANSMISSION_VPN_PORT:9091
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - $TRANSMISSION_VPN_VOL_DATA:/gluetun
+    environment:
+      - VPN_SERVICE_PROVIDER=$TRANSMISSION_VPN_PROVIDER
+      - OPENVPN_USER=$TRANSMISSION_VPN_USER
+      - OPENVPN_PASSWORD=$TRANSMISSION_VPN_PASSWORD
+      - SERVER_REGIONS=$TRANSMISSION_VPN_REGION
+      - PRIVATE_INTERNET_ACCESS_VPN_PORT_FORWARDING=on
+    restart: unless-stopped
+  transmission:
+    image: linuxserver/transmission:4.0.5-r2-ls238
+    container_name: transmission
+    restart: unless-stopped
+    environment:
+      - PUID=$TRANSMISSION_PUID
+      - PGID=$TRANSMISSION_PGID
+      - TZ=$TRANSMISSION_TZ
+    volumes:
+      - $TRANSMISSION_VOL_CONFIG:/config
+      - $TRANSMISSION_VOL_INIT:/custom-cont-init.d:ro
+      - $TRANSMISSION_VOL_DOWNLOADS:/downloads
+      - $TRANSMISSION_VOL_MEDIAS:/mnt/medias
+    depends_on: 
+      - gluetun
+    network_mode: "service:gluetun"
