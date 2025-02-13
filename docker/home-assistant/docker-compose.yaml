@@ -1,0 +1,15 @@
+services:
+  homeassistant:
+    container_name: home-assistant
+    image: ghcr.io/home-assistant/home-assistant:2025.2.3
+    privileged: true
+    ports:
+      - $HOME_ASSISTANT_PORT:8123
+    environment:
+      - TZ=$HOME_ASSISTANT_TZ
+    volumes:
+      - $HOME_ASSISTANT_CONFIG:/config
+      - /etc/localtime:/etc/localtime:ro
+      - /run/dbus:/run/dbus:ro
+    network_mode: host
+    restart: unless-stopped
