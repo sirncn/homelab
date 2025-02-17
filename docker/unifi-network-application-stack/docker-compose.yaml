@@ -23,6 +23,7 @@ services:
       - $UNIFI_NETWORK_VOL_CONFIG:/config
     ports:
       - $UNIFI_NETWORK_PORT:8443
+      - $UNIFI_NETWORK_INFORM_PORT:8080
       - $UNIFI_NETWORK_UDP_PORT_ONE:3478/udp
       - $UNIFI_NETWORK_UDP_PORT_TWO:10001/udp
       - 1901:1900/udp #optional
