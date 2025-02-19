@@ -1,0 +1,8 @@
+services: 
+  cloudflared: 
+    image: cloudflare/cloudflared:2025.2.0
+    container_name: cloudflare-tunnel 
+    command: tunnel run 
+    environment: 
+      - TUNNEL_TOKEN=$CLOUDFLARED_TOKEN
+    restart: unless-stopped
