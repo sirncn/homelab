@@ -1,0 +1,21 @@
+{
+  "extends": ["config:base"],
+  "enabledManagers": ["docker-compose"],
+  "docker-compose": {
+    "fileMatch": ["docker-compose\\.yaml$"]
+  },
+  "pinDigests": true,
+  "packageRules": [
+    {
+      "matchManagers": ["docker-compose"],
+      "matchDatasources": ["docker"],
+      "matchPackagePatterns": [".*"],
+      "versioning": "regex:^(?!latest$).*"
+    },
+    {
+      "matchManagers": ["docker-compose"],
+      "updateTypes": ["minor", "patch"],
+      "automerge": true
+    }
+  ]
+}
