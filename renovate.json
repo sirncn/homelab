@@ -1,5 +1,6 @@
 {
-  "extends": ["config:base"],
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended"],
   "enabledManagers": ["docker-compose"],
   "docker-compose": {
     "fileMatch": ["docker-compose\\.yaml$"]
