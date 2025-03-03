@@ -1,6 +1,6 @@
 services:
     speedtest-tracker:
-        image: lscr.io/linuxserver/speedtest-tracker:v0.21.2-ls47
+        image: lscr.io/linuxserver/speedtest-tracker:v0.21.2-ls47@sha256:e727a06c1e0a279616d18faf39a51e00d864edb16da232c128610382001ece56
         container_name: speedtest-tracker
         restart: unless-stopped
         ports:

@@ -1,6 +1,6 @@
 services:
   prowlarr:
-    image: lscr.io/linuxserver/prowlarr:1.28.2
+    image: lscr.io/linuxserver/prowlarr:1.28.2@sha256:d089b21e8ab2584b7e1713bde5d5f0160d7c9e850ceb2db53158a85ad3caac57
     container_name: prowlarr
     environment:
       - PUID=$ARR_STACK_PUID
@@ -12,13 +12,13 @@ services:
       - $ARR_STACK_PROWLARR_PORT:9696
     restart: unless-stopped
   flaresolverr:
-    image: flaresolverr/flaresolverr:v3.3.21
+    image: flaresolverr/flaresolverr:v3.3.21@sha256:f104ee51e5124d83cf3be9b37480649355d223f7d8f9e453d0d5ef06c6e3b31b
     container_name: flaresolverr
     environment:
       - TZ=$ARR_STACK_TZ
     restart: unless-stopped 
   radarr:
-    image: linuxserver/radarr:5.16.3
+    image: linuxserver/radarr:5.16.3@sha256:eb894bd26fd3fb29981bf91b140834417ce2ed28ab8217d0ce121db5c460f39a
     container_name: radarr
     environment:
       - PUID=$ARR_STACK_PUID
@@ -31,7 +31,7 @@ services:
       - $ARR_STACK_RADARR_PORT:7878
     restart: unless-stopped
   sonarr:
-    image: linuxserver/sonarr:4.0.11
+    image: linuxserver/sonarr:4.0.11@sha256:6221d75e172247220c320bb340ce0ff96a09339216de52b8d861424bfc501cef
     container_name: sonarr
     environment:
       - PUID=$ARR_STACK_PUID
@@ -44,7 +44,7 @@ services:
       - $ARR_STACK_SONARR_PORT:8989
     restart: unless-stopped
   readarr:
-    image: linuxserver/readarr:develop
+    image: linuxserver/readarr:develop@sha256:db02fba99182aaa9321558b52c972a0ae75e6a6deaff59efd734ffc5efe985d5
     container_name: readarr
     environment:
       - PUID=$ARR_STACK_PUID
@@ -57,7 +57,7 @@ services:
       - $ARR_STACK_READARR_PORT:8787
     restart: unless-stopped
   jellyseerr:
-    image: fallenbagel/jellyseerr:2.2.3
+    image: fallenbagel/jellyseerr:2.2.3@sha256:a324fa4d81cce73116801bee3c50b632f3457c0ca0ad31aa692c640e22f50dea
     container_name: jellyseerr
     environment:
       - TZ=$ARR_STACK_TZ
@@ -67,7 +67,7 @@ services:
       - $ARR_STACK_JELLYSEERR_PORT:5055
     restart: unless-stopped
   mylar3:
-    image: lscr.io/linuxserver/mylar3:latest
+    image: lscr.io/linuxserver/mylar3:latest@sha256:3c7e2d70bbfbab336735d8f112c6e9ca483c87df7c7425248b1133aef03cf20e
     container_name: mylar3
     environment:
       - PUID=$ARR_STACK_PUID

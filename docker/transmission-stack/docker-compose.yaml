@@ -1,6 +1,6 @@
 services:
   gluetun:
-    image: qmcgaw/gluetun:v3.38.0
+    image: qmcgaw/gluetun:v3.38.0@sha256:5522794f5cce6d84bc7f06b1e3a3b836ede9100c64aec94543cb503bb2ecb72f
     container_name: gluetun
     ports:
       - $TRANSMISSION_VPN_PORT:9091
@@ -18,7 +18,7 @@ services:
       - PRIVATE_INTERNET_ACCESS_VPN_PORT_FORWARDING=on
     restart: unless-stopped
   transmission:
-    image: linuxserver/transmission:4.0.5-r2-ls238
+    image: linuxserver/transmission:4.0.5-r2-ls238@sha256:71aafce32d2334b820a89193813225e64fe5a3f8b2a222947c4b23d5b7f1cbb3
     container_name: transmission
     restart: unless-stopped
     environment:

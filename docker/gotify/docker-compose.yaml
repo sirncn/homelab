@@ -1,6 +1,6 @@
 services:
   gotify:
-    image: gotify/server:2.5.0
+    image: gotify/server:2.5.0@sha256:87761c6884bab9169699111bc542c0d29ae785247e2129ac9b3a07e54b686281
     container_name: gotify
     restart: unless-stopped
     ports:
