@@ -10,8 +10,7 @@
     {
       "matchManagers": ["docker-compose"],
       "matchDatasources": ["docker"],
-      "matchPackagePatterns": [".*"],
-      "versioning": "regex:^(?!latest$).*"
+      "versioning": "loose"
     },
     {
       "matchManagers": ["docker-compose"],
