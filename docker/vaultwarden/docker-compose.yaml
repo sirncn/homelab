@@ -1,7 +1,7 @@
 services:
     vaulwarde:
         container_name: vaultwarden
-        image: vaultwarden/server:1.33.0-alpine
+        image: vaultwarden/server:1.33.0-alpine@sha256:aae674bfa22cd21bb714a18d5d832984b34275272512984fc0dc62ea6cca6133
         ports:
             - $VAULTWARDEN_PORT:80
         environment:

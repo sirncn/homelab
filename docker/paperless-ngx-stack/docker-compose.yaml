@@ -1,12 +1,12 @@
 services:
   broker:
-    image: docker.io/library/redis:7.4.2-alpine3.21
+    image: docker.io/library/redis:7.4.2-alpine3.21@sha256:02419de7eddf55aa5bcf49efb74e88fa8d931b4d77c07eff8a6b2144472b6952
     container_name: paperless-redis
     volumes:
       - $PAPERLESS_NGX_REDIS_VOL_DATA:/data
     restart: unless-stopped
   db:
-    image: docker.io/library/postgres:17.3-alpine3.21
+    image: docker.io/library/postgres:17.3-alpine3.21@sha256:80d3d7d6bb3ddb1e44b79612330f7bfc6c451f093f6dd14a1317e777a260b602
     container_name: paperless-db
     volumes:
       - $PAPERLESS_NGX_DB_VOL_DATA:/var/lib/postgresql/data
@@ -16,7 +16,7 @@ services:
       - POSTGRES_PASSWORD=$PAPERLESS_NGX_DB_PASSWORD
     restart: unless-stopped
   webserver:
-    image: ghcr.io/paperless-ngx/paperless-ngx:2.14.7
+    image: ghcr.io/paperless-ngx/paperless-ngx:2.14.7@sha256:2a6d9f6461ad7e8335f5b2123a173b9e6002fda209af8a66483b0c00629569ab
     container_name: paperless-gnx
     depends_on:
       - db
@@ -46,7 +46,7 @@ services:
       - PAPERLESS_TIKA_ENDPOINT=http://tika:9998
     restart: unless-stopped
   gotenberg:
-    image: docker.io/gotenberg/gotenberg:8.17.1
+    image: docker.io/gotenberg/gotenberg:8.17.1@sha256:46e7b68adeadda1794a9ab194f1e2939f5b09ff21aadef6000e84102c9af6dd5
     container_name: paperless-gotenberg
     command:
       - "gotenberg"
@@ -54,6 +54,6 @@ services:
       - "--chromium-allow-list=file:///tmp/.*"
     restart: unless-stopped
   tika:
-    image: docker.io/apache/tika:3.1.0.0
+    image: docker.io/apache/tika:3.1.0.0@sha256:2c1a2e563b3a9b2e98443143cd4ca34a6a1e829e24103152a299888153479fab
     container_name: paperless-tika
     restart: unless-stopped
