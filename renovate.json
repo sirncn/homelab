@@ -1,20 +1,35 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended"],
-  "enabledManagers": ["docker-compose"],
+  "extends": [
+    "config:recommended"
+  ],
+  "enabledManagers": [
+    "docker-compose"
+  ],
   "docker-compose": {
-    "fileMatch": ["docker-compose\\.yaml$"]
+    "fileMatch": [
+      "docker-compose\\.yaml$"
+    ]
   },
   "pinDigests": true,
   "packageRules": [
     {
-      "matchManagers": ["docker-compose"],
-      "matchDatasources": ["docker"],
+      "matchManagers": [
+        "docker-compose"
+      ],
+      "matchDatasources": [
+        "docker"
+      ],
       "versioning": "loose"
     },
     {
-      "matchManagers": ["docker-compose"],
-      "updateTypes": ["minor", "patch"],
+      "matchManagers": [
+        "docker-compose"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
       "automerge": true
     }
   ]
