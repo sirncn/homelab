@@ -1,7 +1,7 @@
 services:
   uptimekuma:
     container_name: uptimekuma
-    image: louislam/uptime-kuma:1.23.13-alpine@sha256:cc2cf3480a1925f04bd1fc11ea3c50882646b011dd5be96441b82b7c0ee13ebb
+    image: louislam/uptime-kuma:1.23.16@sha256:431fee3be822b04861cf0e35daf4beef6b7cb37391c5f26c3ad6e12ce280fe18
     volumes:
       - $UPTIME_KUMA_VOL_DATA:/app/data
       - /var/run/docker.sock:/var/run/docker.sock
