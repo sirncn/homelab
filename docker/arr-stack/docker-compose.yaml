@@ -1,6 +1,6 @@
 services:
   prowlarr:
-    image: lscr.io/linuxserver/prowlarr:1.32.1-nightly@sha256:1af7ce4be1b23d09ecc39250d6e04bb60c6bd55524bc9c34a58c3d8a684c8c08
+    image: lscr.io/linuxserver/prowlarr:1.32.2-nightly@sha256:9b39e5555087f73a29cc1e6d656708ee1c517116458b62d56260022db7a7ae90
     container_name: prowlarr
     environment:
       - PUID=$ARR_STACK_PUID
