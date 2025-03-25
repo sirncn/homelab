@@ -8,7 +8,7 @@ services:
     restart: unless-stopped
     
   unifi-network-application:
-    image: lscr.io/linuxserver/unifi-network-application:latest@sha256:0b126fc0c5078fb76deeef77b11816c85f0514716cc21fb97bce5d9d2c3604a5
+    image: lscr.io/linuxserver/unifi-network-application:latest@sha256:d673e01c837337d982bf52ff25b11a3fd61e573fd3f355f998d869549d5948b6
     container_name: unifi-network-application
     environment:
       - PUID=$UNIFI_NETWORK_PUID
