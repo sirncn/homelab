@@ -31,7 +31,7 @@ services:
       - $ARR_STACK_RADARR_PORT:7878
     restart: unless-stopped
   sonarr:
-    image: linuxserver/sonarr:4.0.13.2932-ls272@sha256:4dfedb2598dc6bd51c40f4ecea2631dbe367840678ab109cd968f821d81a5327
+    image: linuxserver/sonarr:4.0.14.2939-ls276@sha256:aa566541ea012f41dd0eedc8bbc67910456713b750d1ace663950ce934269036
     container_name: sonarr
     environment:
       - PUID=$ARR_STACK_PUID
