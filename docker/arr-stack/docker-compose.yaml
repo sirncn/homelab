@@ -18,7 +18,7 @@ services:
       - TZ=$ARR_STACK_TZ
     restart: unless-stopped 
   radarr:
-    image: linuxserver/radarr:5.22.1-nightly@sha256:b135f4142ab858e4a8110a3d1f4539c6ccd993ecf2e119d17ce75cf6d2886f85
+    image: linuxserver/radarr:5.22.1-nightly@sha256:4f54797000b8096ab96eba4401f44fb3b803c56785f8f9eaa531158ea00d229d
     container_name: radarr
     environment:
       - PUID=$ARR_STACK_PUID
