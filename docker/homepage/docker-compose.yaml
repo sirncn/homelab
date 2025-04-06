@@ -5,6 +5,8 @@ services:
     restart: unless-stopped
     ports:
       - $HOMEPAGE_PORT:3000
+    environment:
+      - HOMEPAGE_ALLOWED_HOSTS=$HOMEPAGE_ALLOWED_HOSTS
     volumes:
       - $HOMEPAGE_VOL_CONFIG:/app/config 
       - /var/run/docker.sock:/var/run/docker.sock 
