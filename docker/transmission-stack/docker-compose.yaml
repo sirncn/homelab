@@ -18,7 +18,7 @@ services:
       - PRIVATE_INTERNET_ACCESS_VPN_PORT_FORWARDING=on
     restart: unless-stopped
   transmission:
-    image: linuxserver/transmission:4.0.6@sha256:0d9d72d2b0e5b62b4dd2d047b9c668ee2271f1eec13687f79c0190a97d855e78
+    image: linuxserver/transmission:4.0.6@sha256:b113477544d3bb89a656a2be9e46f9aaecff0e667c9fb797c1da50c8b4be317b
     container_name: transmission
     restart: unless-stopped
     environment:
