@@ -67,7 +67,7 @@ services:
       - $ARR_STACK_JELLYSEERR_PORT:5055
     restart: unless-stopped
   mylar3:
-    image: lscr.io/linuxserver/mylar3:latest@sha256:3c7e2d70bbfbab336735d8f112c6e9ca483c87df7c7425248b1133aef03cf20e
+    image: lscr.io/linuxserver/mylar3:latest@sha256:6688b2beb3a48999bb7b6f63391a62d1e2620b2ddca9c6a371c18c42f826d51a
     container_name: mylar3
     environment:
       - PUID=$ARR_STACK_PUID
