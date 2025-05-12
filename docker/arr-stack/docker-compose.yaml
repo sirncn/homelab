@@ -44,7 +44,7 @@ services:
       - $ARR_STACK_SONARR_PORT:8989
     restart: unless-stopped
   readarr:
-    image: linuxserver/readarr:develop@sha256:db02fba99182aaa9321558b52c972a0ae75e6a6deaff59efd734ffc5efe985d5
+    image: linuxserver/readarr:develop@sha256:607e49b5d2314569164d22549cdb7ba821a33e25d2de323f44c6e3e294273bf0
     container_name: readarr
     environment:
       - PUID=$ARR_STACK_PUID
