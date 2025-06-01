@@ -6,7 +6,13 @@ services:
       - 1883:1883
       - 8883:8883
       - 9001:9001
+    networks:
+      - iot-intra
     volumes:
       - $MOSQUITTO_VOL_CONFIG:/mosquitto/config
       - $MOSQUITTO_VOL_DATA:/mosquitto/data
     restart: unless-stopped
+
+networks:
+  iot-intra:
+    external: true
