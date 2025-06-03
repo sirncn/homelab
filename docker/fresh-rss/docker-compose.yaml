@@ -10,4 +10,13 @@ services:
       - $FRESH_RSS_VOL_CONFIG:/config
     ports:
       - $FRESH_RSS_PORT:80
+    networks:
+      - proxy
+      - internet
     restart: unless-stopped
+
+networks:
+  proxy:
+    external: true
+  internet:
+    external: true
