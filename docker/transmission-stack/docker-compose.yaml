@@ -4,6 +4,9 @@ services:
     container_name: gluetun
     ports:
       - $TRANSMISSION_VPN_PORT:9091
+    networks:
+      - proxy
+      - internet
     cap_add:
       - NET_ADMIN
     devices:
@@ -33,3 +36,9 @@ services:
     depends_on: 
       - gluetun
     network_mode: "service:gluetun"
+
+networks:
+  proxy:
+    external: true
+  internet:
+    external: true
