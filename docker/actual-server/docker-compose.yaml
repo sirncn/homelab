@@ -1,7 +1,7 @@
 services:
   actual_server:
     container_name: actual
-    image: docker.io/actualbudget/actual-server:25.4.0@sha256:c1c372993f9b90ec00a8bf3c135002bd47790e42cae5e76a01743b7fc1cf8f6e
+    image: docker.io/actualbudget/actual-server:25.6.0@sha256:224014dd009a57df7e02e8343bc216b2bd143ec10683a3c1de36cadee7553e56
     ports:
       - $ACTUAL_SERVER_PORT:5006
     volumes:
