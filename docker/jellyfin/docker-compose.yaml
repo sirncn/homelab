@@ -7,6 +7,9 @@ services:
       - 8920:8920 #optional
       - 7359:7359/udp #optional
       - 1900:1900/udp #optional
+    networks:
+      - proxy
+      - internet
     environment:
       - PUID=$JELLYFIN_PUID
       - PGID=$JELLYFIN_PGID
@@ -16,3 +19,9 @@ services:
       - $JELLYFIN_VOL_CONFIG:/config
       - $JELLYFIN_VOL_MEDIAS:/media:ro
     restart: unless-stopped
+
+networks:
+  proxy:
+    external: true
+  internet:
+    external: true
