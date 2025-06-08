@@ -12,6 +12,7 @@ services:
       - $IMMICH_PORT:2283
     networks:
       - proxy
+      - internal
     depends_on:
       - redis
       - database
@@ -24,6 +25,8 @@ services:
     image: ghcr.io/immich-app/immich-machine-learning:v1.131.2@sha256:29836cf73146057ac388546021fff3e00c923e22a28587cceb5108a5e537987d
     volumes:
       - model-cache:/cache
+    networks:
+      - internal
     restart: always
     healthcheck:
       disable: false
@@ -31,6 +34,8 @@ services:
   redis:
     container_name: immich_redis
     image: docker.io/redis:7.4.3@sha256:7df1eeff67eb0ba84f6b9d2940765a6bb1158081426745c185a03b1507de6a09
+    networks:
+      - internal
     healthcheck:
       test: redis-cli ping || exit 1
     restart: always
@@ -45,6 +50,8 @@ services:
       POSTGRES_INITDB_ARGS: "--data-checksums"
     volumes:
       - $IMMICH_DB_VOL_DATA:/var/lib/postgresql/data
+    networks:
+      - internal
     healthcheck:
       test: pg_isready --dbname='$IMMICH_DB_DATABASE_NAME' --username='$IMMICH_DB_USERNAME' || exit 1; Chksum="$$(psql --dbname='$IMMICH_DB_DATABASE_NAME' --username='$IMMICH_DB_USERNAME' --tuples-only --no-align --command='SELECT COALESCE(SUM(checksum_failures), 0) FROM pg_stat_database')"; echo "checksum failure count is $$Chksum"; [ "$$Chksum" = '0' ] || exit 1
       interval: 5m
@@ -74,3 +81,5 @@ volumes:
 networks:
   proxy:
     external: true
+  internal:
+    external: false
