@@ -10,6 +10,8 @@ services:
       - /mnt/RAID1_22TB/maison:/mnt/RAID1_22TB/maison
     ports:
       - $IMMICH_PORT:2283
+    networks:
+      - proxy
     depends_on:
       - redis
       - database
@@ -68,3 +70,7 @@ services:
 
 volumes:
   model-cache:
+  
+networks:
+  proxy:
+    external: true
