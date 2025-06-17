@@ -1,6 +1,6 @@
 services:
   homepage:
-    image: ghcr.io/gethomepage/homepage:v1.1.1@sha256:be49a60307fcce7909acdaf2f3b2f3d168a0468d62869bf72d380625dde91fb9
+    image: ghcr.io/gethomepage/homepage:v1.3.2@sha256:4f923bf0e9391b3a8bc5527e539b022e92dcc8a3a13e6ab66122ea9ed030e196
     container_name: homepage
     restart: unless-stopped
     ports:
