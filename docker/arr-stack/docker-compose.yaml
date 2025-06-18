@@ -10,12 +10,17 @@ services:
       - $ARR_STACK_PROWLARR_VOL_CONFIG:/config
     ports:
       - $ARR_STACK_PROWLARR_PORT:9696
+    networks:
+      - proxy
+      - internet
     restart: unless-stopped
   flaresolverr:
     image: flaresolverr/flaresolverr:v3.3.21@sha256:f104ee51e5124d83cf3be9b37480649355d223f7d8f9e453d0d5ef06c6e3b31b
     container_name: flaresolverr
     environment:
       - TZ=$ARR_STACK_TZ
+    networks:
+      - internet
     restart: unless-stopped 
   radarr:
     image: linuxserver/radarr:5.22.3-nightly@sha256:468607beb10f7fa571e03ef23e45752577940f035824b936493ab0b48108b1c1
@@ -29,6 +34,9 @@ services:
       - $ARR_STACK_VOL_MEDIAS:/mnt/medias
     ports:
       - $ARR_STACK_RADARR_PORT:7878
+    networks:
+      - proxy
+      - internet
     restart: unless-stopped
   sonarr:
     image: linuxserver/sonarr:4.0.14.2939-ls281@sha256:5581b2188f11ea6693e0dfe3f3c3198bb605b78088ec685ad579a5a308cc0d5d
@@ -65,6 +73,9 @@ services:
       - $ARR_STACK_JELLYSEERR_VOL_CONFIG:/app/config
     ports:
       - $ARR_STACK_JELLYSEERR_PORT:5055
+    networks:
+      - proxy
+      - internet
     restart: unless-stopped
   mylar3:
     image: lscr.io/linuxserver/mylar3:latest@sha256:3c7e2d70bbfbab336735d8f112c6e9ca483c87df7c7425248b1133aef03cf20e
@@ -78,4 +89,13 @@ services:
       - $ARR_STACK_VOL_MEDIAS:/mnt/medias
     ports:
       - $ARR_STACK_MYLAR_PORT:8090
+    networks:
+      - proxy
+      - internet
     restart: unless-stopped
+
+networks:
+  proxy:
+    external: true
+  internet:
+    external: true
