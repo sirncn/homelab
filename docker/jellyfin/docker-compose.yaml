@@ -1,6 +1,6 @@
 services:
   jellyfin:
-    image: lscr.io/linuxserver/jellyfin:10.10.7@sha256:01c9d2311eb7710867fb3a8c2718068a276cff468a71d2a2dc58a0f5165ad0d2
+    image: lscr.io/linuxserver/jellyfin:10.10.7@sha256:c9bdf96db6d206272a69edcfc54e771190dc8b4f6a6c2bb2e4d91f485824e470
     container_name: jellyfin
     ports:
       - $JELLYFIN_PORT:8096
