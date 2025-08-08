@@ -1,6 +1,6 @@
 services:
   unifi-db:
-    image: docker.io/mongo:8.0.9@sha256:2e018e386e891d2e4239aca6035fb7701dac51b72891247ecd2f95ff8a167859
+    image: docker.io/mongo:8.0.13-rc1-windowsservercore-ltsc2025@sha256:10f00b56c365e7d09743b10257be328740850f7b7fa7d0fd0270f80114fc49dd
     container_name: unifi-db
     volumes:
       - $UNIFI_NETWORK_DB_VOL_DATA:/data/db
