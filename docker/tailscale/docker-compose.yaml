@@ -1,6 +1,6 @@
 services:
   tailscale:
-    image: tailscale/tailscale:v1.84.2@sha256:8fcad6613f57c42f3073a58823b83b7c961f8e042fb784dc97378828660d65dc
+    image: tailscale/tailscale:v1.86.5@sha256:9e2bfdd9e2ce724df53f976d06a4a9933aa730dc655ace42798f4c73735d1cac
     container_name: tailscale
     environment:
       - TS_AUTHKEY=$TAILSCALE_AUTHKEY
