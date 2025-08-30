@@ -1,7 +1,7 @@
 services:
   freshrss:
     container_name: freshrss
-    image: lscr.io/linuxserver/freshrss:1.26.3@sha256:6fa84cbb1f63220781d1bab6b1494f38783d618caf1e41b21dbe1a292a12b15b
+    image: lscr.io/linuxserver/freshrss:1.27.0@sha256:45dad71857da47a3e589dd0f66746c8ef4c845c5b3ec96fee4e130d1568ea7db
     environment:
       - PUID=$FRESH_RSS_PUID
       - PGID=$FRESH_RSS_PGID
