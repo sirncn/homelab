@@ -1,7 +1,7 @@
 services:
   zigbee2mqtt:
     container_name: zigbee2mqtt
-    image: koenkk/zigbee2mqtt:2.2.1@sha256:5c1f0ca9669292b1bdabc7b6d9927642049bc2c1ee53f42b7299181e93dd7d8f
+    image: koenkk/zigbee2mqtt:2.6.1@sha256:22e1fc160163edee0ceef47910211e97e7b0fb18b6bc94c9b799409252409f6a
     restart: unless-stopped
     privileged: true
     ports:
