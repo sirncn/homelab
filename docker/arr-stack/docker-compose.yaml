@@ -55,7 +55,7 @@ services:
       - proxy
       - internet
   readarr:
-    image: linuxserver/readarr:develop@sha256:db02fba99182aaa9321558b52c972a0ae75e6a6deaff59efd734ffc5efe985d5
+    image: linuxserver/readarr:develop@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb
     container_name: readarr
     environment:
       - PUID=$ARR_STACK_PUID
