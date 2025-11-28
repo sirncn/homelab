@@ -84,7 +84,7 @@ services:
       - internet
     restart: unless-stopped
   mylar3:
-    image: lscr.io/linuxserver/mylar3:latest@sha256:3c7e2d70bbfbab336735d8f112c6e9ca483c87df7c7425248b1133aef03cf20e
+    image: lscr.io/linuxserver/mylar3:latest@sha256:7bdbdff5716ad6784194e5f1010e495a0a255eab31ed5bcd8fc217098c0fd3ca
     container_name: mylar3
     environment:
       - PUID=$ARR_STACK_PUID
