@@ -1,7 +1,7 @@
 services:
   homeassistant:
     container_name: home-assistant
-    image: ghcr.io/home-assistant/home-assistant:2025.8.0.dev202506260239@sha256:a06033390c0e710cdb7b309b36d44002dc7b68f8747492a9a7ef181a4a9d1faa
+    image: ghcr.io/home-assistant/home-assistant:2025.12.0b7@sha256:ab8c4d83b4320ac182841b38deb618a6d362c5af1c858e51c6b354cc2cb7bcf1
     ports:
       - $HOME_ASSISTANT_PORT:8123
     networks:
