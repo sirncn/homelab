@@ -39,7 +39,7 @@ services:
       - internet
     restart: unless-stopped
   sonarr:
-    image: linuxserver/sonarr:4.0.15.2941-ls289@sha256:c0836f49c20000e603170dc95d74c2527e690d50309977d94fc171eaa49351a4
+    image: linuxserver/sonarr:4.0.16.2944-ls299@sha256:60e5edcac39172294ad22d55d1b08c2c0a9fe658cad2f2c4d742ae017d7874de
     container_name: sonarr
     environment:
       - PUID=$ARR_STACK_PUID
