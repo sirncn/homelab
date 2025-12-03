@@ -23,7 +23,7 @@ services:
       - internet
     restart: unless-stopped 
   radarr:
-    image: linuxserver/radarr:5.27.4-nightly@sha256:70a6779059e1c401ef87ef99bf15b38c752d9508f321d084f46544cad567f987
+    image: linuxserver/radarr:5.28.1-nightly@sha256:d75dc35160f2b618429fc51af37b3a9a88ae8a91942de6ebaa3e5484031a02a4
     container_name: radarr
     environment:
       - PUID=$ARR_STACK_PUID
