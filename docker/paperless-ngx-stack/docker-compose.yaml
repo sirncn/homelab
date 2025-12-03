@@ -1,6 +1,6 @@
 services:
   broker:
-    image: docker.io/library/redis:7.4.3@sha256:7df1eeff67eb0ba84f6b9d2940765a6bb1158081426745c185a03b1507de6a09
+    image: docker.io/library/redis:7.4.7@sha256:483eaf69e400c5254a2dae9c9f9499c336ecc0537c36fca462516a8f8bf75f78
     container_name: paperless-redis
     volumes:
       - $PAPERLESS_NGX_REDIS_VOL_DATA:/data
