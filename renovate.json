@@ -7,8 +7,8 @@
     "docker-compose"
   ],
   "docker-compose": {
-    "fileMatch": [
-      "docker-compose\\.yaml$"
+    "managerFilePatterns": [
+      "/docker-compose\\.yaml$/"
     ]
   },
   "pinDigests": true,
