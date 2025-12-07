@@ -2,8 +2,17 @@ services:
   actual_server:
     container_name: actual
     image: docker.io/actualbudget/actual-server:25.12.0@sha256:7f38b450cc3b7523dd5377792895e58b9cf333769e5a27f89e643b6f5fc60565
+    networks:
+      - proxy
+      - internet
     ports:
       - $ACTUAL_SERVER_PORT:5006
     volumes:
       - $ACTUAL_SERVER_VOL_DATA:/data
     restart: unless-stopped
+
+networks:
+  proxy:
+    external: true
+  internet:
+    external: true
