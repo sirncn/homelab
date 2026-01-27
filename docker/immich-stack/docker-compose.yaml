@@ -3,7 +3,7 @@ name: immich
 services:
   immich:
     container_name: immich
-    image: ghcr.io/immich-app/immich-server:v1.131.3@sha256:7e5b6729b12b5e5cc5d98bcc6f7c27f723fabae4ee77696855808ebd5200bbf8
+    image: ghcr.io/immich-app/immich-server:v2.5.0@sha256:6c011eaa315b871f3207d68f97205d92b3e600104466a75b01eb2c3868e72ca1
     volumes:
       - $IMMICH_VOL_UPLOAD:/usr/src/app/upload
       - /etc/localtime:/etc/localtime:ro
@@ -22,7 +22,7 @@ services:
 
   immich-machine-learning:
     container_name: immich_machine_learning
-    image: ghcr.io/immich-app/immich-machine-learning:v1.131.2@sha256:29836cf73146057ac388546021fff3e00c923e22a28587cceb5108a5e537987d
+    image: ghcr.io/immich-app/immich-machine-learning:v2.5.0@sha256:5fee7f3e052c3d32d4edecafad68317394daae26f57d895fbd487886083725a7
     volumes:
       - model-cache:/cache
     networks:
