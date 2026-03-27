@@ -4,6 +4,7 @@ services:
     container_name: gluetun
     ports:
       - $TRANSMISSION_VPN_PORT:9091
+      - $DISPATCHARR_PORT:9191
     networks:
       - proxy
       - internet
@@ -33,6 +34,20 @@ services:
       - $TRANSMISSION_VOL_INIT:/custom-cont-init.d:ro
       - $TRANSMISSION_VOL_DOWNLOADS:/downloads
       - $TRANSMISSION_VOL_MEDIAS:/mnt/medias
+    depends_on: 
+      - gluetun
+    network_mode: "service:gluetun"
+  dispatcharr:
+    image: ghcr.io/dispatcharr/dispatcharr:0.21.1-20260326150814
+    container_name: dispatcharr
+    restart: unless-stopped
+    volumes:
+      - $DISPATCHARR_VOL_DATA:/data
+    environment:
+      - DISPATCHARR_ENV=$DISPATCHARR_ENV
+      - REDIS_HOST=$DISPATCHARR_REDIS_HOST
+      - CELERY_BROKER_URL=$DISPATCHARR_CELERY_BROKER_URL
+      - DISPATCHARR_LOG_LEVEL=$DISPATCHARR_LOG_LEVEL
     depends_on: 
       - gluetun
     network_mode: "service:gluetun"
