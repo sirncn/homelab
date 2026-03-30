@@ -46,7 +46,7 @@ services:
       - PAPERLESS_TIKA_ENDPOINT=http://tika:9998
     restart: unless-stopped
   gotenberg:
-    image: docker.io/gotenberg/gotenberg:8.21.1@sha256:91486863744f7420ca985ee6cef7c216910e40faffd378f3da7c0fad724d01ba
+    image: docker.io/gotenberg/gotenberg:8.29.1@sha256:36c925776fa0db0fd1030408d131fde7ac3453027a559883555155b72adb16a7
     container_name: paperless-gotenberg
     command:
       - "gotenberg"
