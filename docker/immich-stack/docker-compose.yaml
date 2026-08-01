@@ -33,7 +33,7 @@ services:
 
   redis:
     container_name: immich_redis
-    image: docker.io/redis:7.4.3@sha256:7df1eeff67eb0ba84f6b9d2940765a6bb1158081426745c185a03b1507de6a09
+    image: docker.io/redis:7.4.10@sha256:595cc6f2bb3af6e03347b90deb6123c6aa2c81dea05ce08128de8a174b6ac67b
     networks:
       - internal
     healthcheck:
