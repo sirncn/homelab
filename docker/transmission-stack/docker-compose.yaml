@@ -25,7 +25,7 @@ services:
       - FIREWALL_INPUT_PORTS=9091,9191
     restart: unless-stopped
   transmission:
-    image: linuxserver/transmission:163@sha256:8f6698ddaf3cb4517af26825965afdd9b836a21df03e3b08628b2882455328de
+    image: linuxserver/transmission:163@sha256:7500fe2cc34a52da2dbf9a51246a4dc0eb66611c538765d9ca08447e5b49a0d0
     container_name: transmission
     restart: unless-stopped
     environment:
