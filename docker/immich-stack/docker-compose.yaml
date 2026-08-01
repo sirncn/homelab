@@ -44,8 +44,6 @@ services:
 
   database:
     container_name: immich_postgres
-    # CHANGEMENT 3: On garde l'ancienne image tensorchord pour l'instant
-    # C'est crucial pour que v1.132.3 puisse lire vos données actuelles
     image: docker.io/tensorchord/pgvecto-rs:pg14-v0.2.0@sha256:739cdd626151ff1f796dc95a6591b55a714f341c737e27f045019ceabf8e8c52
     environment:
       POSTGRES_PASSWORD: $IMMICH_DB_PASSWORD
@@ -56,24 +54,6 @@ services:
       - $IMMICH_DB_VOL_DATA:/var/lib/postgresql/data
     networks:
       - internal
-    # CHANGEMENT 4: On garde VOTRE bloc command actuel ici
-    # Il est nécessaire pour l'ancienne image tensorchord
-    command:
-      [
-        "postgres",
-        "-c",
-        "shared_preload_libraries=vectors.so",
-        "-c",
-        'search_path="$$user", public, vectors',
-        "-c",
-        "logging_collector=on",
-        "-c",
-        "max_wal_size=2GB",
-        "-c",
-        "shared_buffers=512MB",
-        "-c",
-        "wal_compression=on"
-      ]
     restart: always
 
 volumes:
