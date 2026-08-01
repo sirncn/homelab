@@ -16,7 +16,7 @@ services:
       - POSTGRES_PASSWORD=$PAPERLESS_NGX_DB_PASSWORD
     restart: unless-stopped
   webserver:
-    image: ghcr.io/paperless-ngx/paperless-ngx:2.20.1@sha256:98528e58787e48c73748608e8d4c03b1692c185e69fc237c00c44d3b4f68b335
+    image: ghcr.io/paperless-ngx/paperless-ngx:3.0.4@sha256:3838b9a4260d23acc5bb63aed407138435e70b56e5806f4baa350ca184e57582
     container_name: paperless-gnx
     depends_on:
       - db
