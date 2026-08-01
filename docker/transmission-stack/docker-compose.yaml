@@ -41,7 +41,7 @@ services:
       - gluetun
     network_mode: "service:gluetun"
   dispatcharr:
-    image: ghcr.io/dispatcharr/dispatcharr:0.28.2@sha256:3eb0ec779f3437ec64c08a9b3f545a355a8f512f3740cdeaac42b80f1021637d
+    image: ghcr.io/dispatcharr/dispatcharr:9de6f79-arm64@sha256:6c1d06b8aa64188f848e1b3630e194baf15d7fe7a12ef0428f1a49ef4781b043
     container_name: dispatcharr
     restart: unless-stopped
     volumes:
