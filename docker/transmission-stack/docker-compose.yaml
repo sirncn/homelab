@@ -40,20 +40,6 @@ services:
     depends_on: 
       - gluetun
     network_mode: "service:gluetun"
-  dispatcharr:
-    image: ghcr.io/dispatcharr/dispatcharr:9de6f79-arm64@sha256:6c1d06b8aa64188f848e1b3630e194baf15d7fe7a12ef0428f1a49ef4781b043
-    container_name: dispatcharr
-    restart: unless-stopped
-    volumes:
-      - $DISPATCHARR_VOL_DATA:/data
-    environment:
-      - DISPATCHARR_ENV=$DISPATCHARR_ENV
-      - REDIS_HOST=$DISPATCHARR_REDIS_HOST
-      - CELERY_BROKER_URL=$DISPATCHARR_CELERY_BROKER_URL
-      - DISPATCHARR_LOG_LEVEL=$DISPATCHARR_LOG_LEVEL
-    depends_on: 
-      - gluetun
-    network_mode: "service:gluetun"
 
 networks:
   proxy:
