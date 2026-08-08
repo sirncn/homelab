@@ -54,6 +54,6 @@ services:
       - "--chromium-allow-list=file:///tmp/.*"
     restart: unless-stopped
   tika:
-    image: docker.io/apache/tika:4.0.0-SNAPSHOT-full@sha256:09ebcabc3ebe803e6a9ae9592bb32333abac4c81565a2048b612d4549e0de119
+    image: docker.io/apache/tika:4.0.0-SNAPSHOT-full@sha256:2652c854c64de22944960072887f71a383e41ec46127cee8ae382a2f1c268604
     container_name: paperless-tika
     restart: unless-stopped
