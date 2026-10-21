@@ -6,7 +6,7 @@ services:
       - $PAPERLESS_NGX_REDIS_VOL_DATA:/data
     restart: unless-stopped
   db:
-    image: docker.io/library/postgres:17.10@sha256:a426e44bac0b759c95894d68e1a0ac03ecc20b619f498a91aae373bf06d8508d
+    image: docker.io/library/postgres:19rc1-trixie@sha256:de2cbeff2b8177e65bd64d077b46c90a1898aa8aea974a9e35a8cf60b5e90581
     container_name: paperless-db
     volumes:
       - $PAPERLESS_NGX_DB_VOL_DATA:/var/lib/postgresql/data
